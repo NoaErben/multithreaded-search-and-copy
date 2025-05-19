@@ -7,14 +7,14 @@ Any matched files are copied to a specified destination directory.
 The system efficiently utilizes **multithreading** with synchronized queues to improve performance.
 
 ## Workflow
-1. **Scouter Thread **:
+1. Scouter Thread:
    - Traverses the root directory recursively.
    - Enqueues each encountered directory into a queue.
-2. **Searcher Threads **:
+2. Searcher Threads:
    - Dequeues directories from the queue.
    - Searches for files matching the pattern and extension.
    - Enqueues matching files into a results queue.
-3. **Copier Threads **:
+3. Copier Threads:
    - Dequeues files from the results queue.
    - Copies them to the destination directory.
 
